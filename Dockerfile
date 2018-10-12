@@ -6,7 +6,7 @@ LABEL maintainer="corerealestate@navent.com"
 
 WORKDIR /home/navent/app
 
-ARG NR_VERSION
+ARG NR_VERSION=4.7.0
 RUN echo ${NR_VERSION}
 
 RUN apk add --no-cache curl
