@@ -1,5 +1,5 @@
 ARG BASE_IMAGE=openjdk:8-jre-alpine
-RUN echo ${BASE_IMAGE}
+#RUN echo ${BASE_IMAGE}
 
 FROM ${BASE_IMAGE}
 LABEL maintainer="corerealestate@navent.com"
