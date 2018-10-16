@@ -11,6 +11,6 @@ RUN echo ${NR_VERSION}
 
 RUN apk add --no-cache curl
 
-RUN curl -o newrelic.jar http://central.maven.org/maven2/com/newrelic/agent/java/newrelic-api/${NR_VERSION}/newrelic-api-${NR_VERSION}.jar
+RUN curl -o newrelic.jar http://central.maven.org/maven2/com/newrelic/agent/java/newrelic-agent/${NR_VERSION}/newrelic-agent-${NR_VERSION}.jar
 
 COPY newrelic.yml newrelic.yml
