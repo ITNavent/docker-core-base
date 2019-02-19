@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=openjdk:8-jre-alpine
+ARG BASE_IMAGE=openjdk:8u191-jre-alpine3.9
 #RUN echo ${BASE_IMAGE}
 
 FROM ${BASE_IMAGE}
