@@ -1,8 +1,12 @@
 ARG BASE_IMAGE=openjdk:8-jre-alpine
-#RUN echo ${BASE_IMAGE}
+RUN echo "base image ${BASE_IMAGE}"
 
 FROM ${BASE_IMAGE}
 LABEL maintainer="corerealestate@navent.com"
+
+RUN apk add --no-cache tzdata
+ENV TZ America/New_York
+RUN cp /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 WORKDIR /home/navent/app
 
