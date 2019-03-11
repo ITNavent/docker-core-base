@@ -11,7 +11,7 @@ kind: Pod
 spec:
   containers:
   - name: docker
-    image: docker:18.06.1-ce
+    image: docker:latest
     command:
     - cat
     tty: true
