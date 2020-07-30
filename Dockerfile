@@ -21,11 +21,16 @@ RUN apk add --no-cache ca-certificates fuse && rm -rf /tmp/*
 
 WORKDIR /home/navent/app
 
-ARG NR_VERSION=4.11.0
+ARG NR_VERSION=5.14.0
 RUN echo ${NR_VERSION}
 
 RUN apk add --no-cache curl
 
-RUN curl -o newrelic.jar http://central.maven.org/maven2/com/newrelic/agent/java/newrelic-agent/${NR_VERSION}/newrelic-agent-${NR_VERSION}.jar
+RUN curl -o newrelic.jar https://repo1.maven.org/maven2/com/newrelic/agent/java/newrelic-agent/${NR_VERSION}/newrelic-agent-${NR_VERSION}.jar
 
 COPY newrelic.yml newrelic.yml
+
+ARG SCUTTLE_VERSION=v1.3.1
+RUN echo ${SCUTTLE_VERSION}
+RUN curl -L https://github.com/redboxllc/scuttle/releases/download/${SCUTTLE_VERSION}/scuttle-linux-amd64.zip | jar xv
+RUN chmod +x scuttle
