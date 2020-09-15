@@ -21,7 +21,7 @@ RUN apk add --no-cache ca-certificates fuse && rm -rf /tmp/*
 
 WORKDIR /home/navent/app
 
-ARG NR_VERSION=5.14.0
+ARG NR_VERSION=6.0.0
 RUN echo ${NR_VERSION}
 
 RUN apk add --no-cache curl
