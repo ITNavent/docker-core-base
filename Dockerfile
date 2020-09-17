@@ -7,6 +7,9 @@ RUN go get -u github.com/googlecloudplatform/gcsfuse
 FROM ${BASE_IMAGE}
 LABEL maintainer="corerealestate@navent.com"
 
+COPY --from=0 /go/bin/gcsfuse /usr/local/bin
+RUN apk add --no-cache ca-certificates fuse && rm -rf /tmp/*
+
 RUN apk add --no-cache tzdata
 ENV TZ America/New_York
 RUN cp /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
@@ -14,10 +17,6 @@ RUN cp /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
-
-COPY --from=0 /go/bin/gcsfuse /usr/local/bin
-
-RUN apk add --no-cache ca-certificates fuse && rm -rf /tmp/*
 
 WORKDIR /home/navent/app
 
