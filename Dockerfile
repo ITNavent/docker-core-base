@@ -15,7 +15,7 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
-COPY --from=0 /go/bin/gcsfuse /usr/local/bin
+COPY --from= /go/bin/gcsfuse /usr/local/bin
 
 RUN apk add --no-cache ca-certificates fuse && rm -rf /tmp/*
 
