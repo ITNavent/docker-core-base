@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=adoptopenjdk/openjdk8:jdk8u202-b08-alpine 
+ARG BASE_IMAGE=adoptopenjdk/openjdk11:jdk-11.0.9.1_1-alpine-slim
 FROM golang:1.10.0-alpine
 RUN apk add --no-cache git
 ENV GOPATH /go
